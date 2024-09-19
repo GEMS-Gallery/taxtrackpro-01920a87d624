@@ -1,4 +1,5 @@
 import Array "mo:base/Array";
+import Bool "mo:base/Bool";
 import Hash "mo:base/Hash";
 
 import HashMap "mo:base/HashMap";
@@ -42,5 +43,24 @@ actor {
   // Search for a TaxPayer by TID
   public query func searchTaxPayer(tid: Text) : async ?TaxPayer {
     taxPayers.get(tid)
+  };
+
+  // Update a TaxPayer record
+  public func updateTaxPayer(tp: TaxPayer) : async Bool {
+    switch (taxPayers.get(tp.tid)) {
+      case (null) { false };
+      case (?_) {
+        taxPayers.put(tp.tid, tp);
+        true
+      };
+    }
+  };
+
+  // Delete a TaxPayer record
+  public func deleteTaxPayer(tid: Text) : async Bool {
+    switch (taxPayers.remove(tid)) {
+      case (null) { false };
+      case (?_) { true };
+    }
   };
 }

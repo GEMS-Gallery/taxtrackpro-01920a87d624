@@ -27,6 +27,20 @@
                 <button id="close-popup-btn">&times;</button>
             </div>
         </div>
+        <div id="update-popup-overlay" class="overlay">
+            <div class="popup">
+                <h2>Update TaxPayer</h2>
+                <form id="update-taxpayer-form">
+                    <input type="text" id="update-tid" placeholder="TID" required readonly>
+                    <input type="text" id="update-firstName" placeholder="First Name" required>
+                    <input type="text" id="update-lastName" placeholder="Last Name" required>
+                    <input type="text" id="update-address" placeholder="Address" required>
+                    <input type="text" id="update-taxBracketCode" placeholder="Tax Bracket Code" required maxlength="1">
+                    <button type="submit">Update TaxPayer</button>
+                </form>
+                <button id="close-update-popup-btn">&times;</button>
+            </div>
+        </div>
         <section id="search-taxpayer">
             <h2>Search TaxPayer</h2>
             <form id="search-form">
@@ -45,6 +59,7 @@
                         <th>Last Name</th>
                         <th>Address</th>
                         <th>Tax Bracket</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="taxpayer-table-body"></tbody>
