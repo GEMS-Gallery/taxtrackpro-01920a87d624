@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxPayer Management System</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>TaxPayer Management System</h1>
+    </header>
+    <main>
+        <section id="add-taxpayer">
+            <h2>Add New TaxPayer</h2>
+            <form id="taxpayer-form">
+                <input type="text" id="tid" placeholder="TID" required>
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <input type="text" id="lastName" placeholder="Last Name" required>
+                <input type="text" id="address" placeholder="Address" required>
+                <input type="text" id="taxBracketCode" placeholder="Tax Bracket Code" required maxlength="1">
+                <button type="submit">Add TaxPayer</button>
+            </form>
+        </section>
+        <section id="search-taxpayer">
+            <h2>Search TaxPayer</h2>
+            <form id="search-form">
+                <input type="text" id="search-tid" placeholder="Enter TID to search">
+                <button type="submit">Search</button>
+            </form>
+            <div id="search-result"></div>
+        </section>
+        <section id="taxpayer-list">
+            <h2>TaxPayer List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Address</th>
+                        <th>Tax Bracket</th>
+                    </tr>
+                </thead>
+                <tbody id="taxpayer-table-body"></tbody>
+            </table>
+        </section>
+    </main>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

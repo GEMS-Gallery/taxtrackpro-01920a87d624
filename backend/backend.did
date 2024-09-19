@@ -1,0 +1,13 @@
+type TaxPayer = 
+ record {
+   address: text;
+   firstName: text;
+   lastName: text;
+   taxBracketCode: text;
+   tid: text;
+ };
+service : {
+  addTaxPayer: (TaxPayer) -> ();
+  getAllTaxPayers: () -> (vec TaxPayer) query;
+  searchTaxPayer: (text) -> (opt TaxPayer) query;
+}
