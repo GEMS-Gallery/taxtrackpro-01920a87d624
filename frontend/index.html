@@ -12,17 +12,21 @@
         <p class="sub-strap">by Dominic Williams</p>
     </header>
     <main>
-        <section id="add-taxpayer">
-            <h2>Add New TaxPayer</h2>
-            <form id="taxpayer-form">
-                <input type="text" id="tid" placeholder="TID" required>
-                <input type="text" id="firstName" placeholder="First Name" required>
-                <input type="text" id="lastName" placeholder="Last Name" required>
-                <input type="text" id="address" placeholder="Address" required>
-                <input type="text" id="taxBracketCode" placeholder="Tax Bracket Code" required maxlength="1">
-                <button type="submit">Add TaxPayer</button>
-            </form>
-        </section>
+        <button id="open-popup-btn">Add New TaxPayer</button>
+        <div id="popup-overlay" class="overlay">
+            <div class="popup">
+                <h2>Add New TaxPayer</h2>
+                <form id="taxpayer-form">
+                    <input type="text" id="tid" placeholder="TID" required>
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                    <input type="text" id="address" placeholder="Address" required>
+                    <input type="text" id="taxBracketCode" placeholder="Tax Bracket Code" required maxlength="1">
+                    <button type="submit">Add TaxPayer</button>
+                </form>
+                <button id="close-popup-btn">&times;</button>
+            </div>
+        </div>
         <section id="search-taxpayer">
             <h2>Search TaxPayer</h2>
             <form id="search-form">

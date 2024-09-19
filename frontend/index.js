@@ -5,6 +5,26 @@ document.addEventListener('DOMContentLoaded', async () => {
   const searchForm = document.getElementById('search-form');
   const taxpayerTableBody = document.getElementById('taxpayer-table-body');
   const searchResult = document.getElementById('search-result');
+  const openPopupBtn = document.getElementById('open-popup-btn');
+  const closePopupBtn = document.getElementById('close-popup-btn');
+  const popupOverlay = document.getElementById('popup-overlay');
+
+  // Function to open popup
+  openPopupBtn.addEventListener('click', () => {
+    popupOverlay.style.display = 'block';
+  });
+
+  // Function to close popup
+  closePopupBtn.addEventListener('click', () => {
+    popupOverlay.style.display = 'none';
+  });
+
+  // Close popup when clicking outside
+  popupOverlay.addEventListener('click', (e) => {
+    if (e.target === popupOverlay) {
+      popupOverlay.style.display = 'none';
+    }
+  });
 
   // Function to add a new taxpayer
   taxpayerForm.addEventListener('submit', async (e) => {
@@ -19,6 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     await backend.addTaxPayer(taxpayer);
     taxpayerForm.reset();
+    popupOverlay.style.display = 'none';
     await updateTaxpayerList();
   });
 
